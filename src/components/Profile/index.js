@@ -1,0 +1,57 @@
+import React from "react";
+import IconInstagram from "../icons/icon_instagram";
+import IconCodesandbox from "../icons/ic_codesandbox";
+import IconFacebook from "../icons/ic_facebook";
+import IconGithub from "../icons/ic_github";
+
+const Profile = () => {
+  return (
+    <div className="profile">
+      <div className="profile-text">PROFILE</div>
+      <div className="profile-text__des">I'm a creative web deverloper</div>
+      <div className="profile-detail">
+        <div className="profile-left">
+          <h2>About me</h2>
+          <div className="profile-right__item">
+            I am creative web deverloper. I am a junior programmer with good
+            knowledge of front-end techniques
+          </div>
+        </div>
+        <img
+          className="profile-avatar"
+          src="https://image.thanhnien.vn/w2048/Uploaded/2022/juzagt/2022_09_26/1-522.jpg"
+          alt=""
+        />
+        <div className="profile-right">
+          <h2>Details</h2>
+          <div className="label-profile">Name: </div>
+          <div className="profile-right__item">Dinh Tuan Anh</div>
+          <div className="label-profile">Phonenumber: </div>
+          <div className="profile-right__item">+84 337889917</div>
+          <div className="label-profile">Email: </div>
+          <div className="profile-right__item">dinhtuananh0105@gmail.com</div>
+          <div className="label-profile">Address: </div>
+          <div className="profile-right__item">
+            Cau Giay district, Hanoi, Vietnam
+          </div>
+          <div className="profile-contact">
+            <div className="box-white">
+              <IconFacebook />
+            </div>
+            <div className="box-white">
+              <IconInstagram />
+            </div>
+            <div className="box-white">
+              <IconGithub />
+            </div>
+            <div className="box-white">
+              <IconCodesandbox />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Profile;

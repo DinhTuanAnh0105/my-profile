@@ -1,13 +1,248 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* header */
+
+.header {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 2px -2px rgb(221, 221, 221);
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.header-logo {
+  margin-left: 100px;
+}
+
+.header-options {
+  width: 30%;
+  margin-right: 100px;
+  font-weight: 900;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-options__item {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.header-options__item:hover {
+  color: #ec553e;
+}
+
+/* banner */
+
+.banner {
+  height: 700px;
+  background-color: #e0e3e6;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.banner-avatar {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.banner-left__name {
+  font-weight: 900;
+  font-size: 78px;
+}
+
+.banner-left__title {
+  font-weight: 700;
+  font-size: 48px;
+  color: rgb(100, 100, 100);
+}
+
+.banner-left__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  margin-top: 100px;
+}
+
+.banner-left__button:hover {
+  background-color: #ec553e;
+}
+
+.banner-left__icon {
+  margin-left: 20px;
+}
+
+/* .abc {
+  font-weight: 200;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 1.9em;
+  color: #000;
+  padding: 0;
+  line-height: 0.8em !important;
+  text-transform: none;
+} */
+
+.text-color {
+  color: #ec553e;
+  animation-delay: 2s;
+}
+
+/* profile */
+
+.profile {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.profile-text {
+  /* margin-bottom: 50px; */
+  font-weight: 900;
+  font-size: 36px;
+}
+.profile-text__des {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+  margin-bottom: 30px;
+}
+
+.profile-detail {
+  display: grid;
+  grid-template-columns: 35% 30% 35%;
+  grid-template-rows: auto;
+  margin: 0 100px;
+}
+
+.profile-avatar {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.label-profile {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: rgb(100, 100, 100);
+}
+
+.profile-right,
+.profile-left {
+  text-align: left;
+}
+
+.profile-right__item {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.profile-contact {
+  display: flex;
+}
+
+.box-white {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgb(221, 221, 221);
+  height: 24px;
+  width: 24px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* skills */
+
+.skills {
+  /* margin: 0 100px; */
+  text-align: center;
+  
+}
+
+.skills-title {
+  font-size: 36px;
+  font-weight: 900;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.skills-body {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #e0e3e6;
+  height: 500px;
+  width: 100%;
+}
+
+.skills-body__right {
+  margin-right: 100px;
+  text-align: left;
+}
+
+.skills-list__items {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.skills-body__left {
+  margin-left: 100px;
+}
+
+.skills-details {
+  margin-top: 50px;
+}
+
+.skills-details__items {
+  display: flex;
+  margin-top: 50px;
+  /* justify-content: space-between; */
+}
+
+.skills-details__left {
+  width: 50px;
+  height: 50px;
+  background-color: #ec553e;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.skills-details__right {
+  flex:1;
+  margin-left: 20px;
+  font-size: 24px;
+  color: rgb(100, 100, 100);
+  font-weight: 900;
+}
+
+ 
