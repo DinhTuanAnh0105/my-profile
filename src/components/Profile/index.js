@@ -3,6 +3,7 @@ import IconInstagram from "../icons/icon_instagram";
 import IconCodesandbox from "../icons/ic_codesandbox";
 import IconFacebook from "../icons/ic_facebook";
 import IconGithub from "../icons/ic_github";
+import Avatar from "../../assets/images/anhdt.jpg"
 
 const Profile = () => {
   return (
@@ -19,7 +20,7 @@ const Profile = () => {
         </div>
         <img
           className="profile-avatar"
-          src="https://image.thanhnien.vn/w2048/Uploaded/2022/juzagt/2022_09_26/1-522.jpg"
+          src={Avatar}
           alt=""
         />
         <div className="profile-right">

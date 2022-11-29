@@ -9,6 +9,8 @@ const IconLightbulb = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       enable-background="new 0 0 512 512"
       fill="#fff"
+      height="36px"
+      width="36px"
     >
       <g>
         <g>
