@@ -1,3 +1,5 @@
+import ReactApexChart from "react-apexcharts";
+import useGetWidth from "../../hooks/useGetWidth";
 import IconBootstrap from "../icons/ic_bootstrap";
 import IconCSS3 from "../icons/ic_css";
 import IconDiamond from "../icons/ic_diamond";
@@ -11,20 +13,49 @@ import IconSass from "../icons/ic_sass";
 import IconTs from "../icons/ic_ts";
 
 const Skills = () => {
+  const widthScreen = useGetWidth();
+  const getHeightApexChart = () => {
+    if (widthScreen < 640) return 300;
+    if (widthScreen < 1024) return 400;
+    if (widthScreen < 1280) return 500;
+  };
   return (
     <div className="skills">
       <div className="skills-title">SKILLS</div>
       <div className="skills-body">
         <div className="skills-body__left">
-          <figure class="chart-three animate">
-            <svg role="img" xmlns="http://www.w3.org/2000/svg">
-              <title>[title here]</title>
-              <desc>[long description here]</desc>
-              <circle class="circle-background" />
-              <circle class="circle-foreground" />
-            </svg>
-            <figcaption>75% of all males like donuts.</figcaption>
-          </figure>
+          <ReactApexChart
+            type="radialBar"
+            height={getHeightApexChart()}
+            series={[44, 55, 67, 83, 90]}
+            options={{
+              chart: {
+                height: 100,
+                width: 100,
+                type: "radialBar",
+              },
+              plotOptions: {
+                radialBar: {
+                  dataLabels: {
+                    name: {
+                      fontSize: "22px",
+                    },
+                    value: {
+                      fontSize: "16px",
+                    },
+                    total: {
+                      show: true,
+                      label: "Total",
+                      formatter: function (w) {
+                        return "5 Skills";
+                      },
+                    },
+                  },
+                },
+              },
+              labels: ["HTML", "CSS", "JavaScript", "React", "NextJs"],
+            }}
+          />
         </div>
         <div className="skills-body__right">
           <div className="skills-list">

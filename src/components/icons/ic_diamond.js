@@ -12,8 +12,8 @@ const IconDiamond = () => {
       viewBox="0 0 64 64"
       enable-background="new 0 0 64 64"
       xmlSpace="preserve"
-      height="50px"
-      width="50px"
+      height="36px"
+      width="36px"
       fill="#fff"
     >
       <path
