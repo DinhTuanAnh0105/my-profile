@@ -9,7 +9,7 @@ const Profile = () => {
   return (
     <div className="profile" id="profile">
       <div className="profile-text" >PROFILE</div>
-      <div className="profile-text__des">I'm a creative web deverloper</div>
+      <div className="profile-text__des">I'm a creative web developer</div>
       <div className="profile-detail">
         <div className="profile-left">
           <h2>About me</h2>
