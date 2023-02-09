@@ -26,6 +26,9 @@ code {
 
 .header-logo {
   margin-left: 100px;
+  font-size: 18px;
+  /* color: #ec553e; */
+  font-weight: bold;
 }
 
 .header-options {
@@ -300,6 +303,7 @@ code {
 .project-des {
   font-size: 18px;
   font-weight: 600;
+  text-align: left;
   color: rgb(100, 100, 100);
 }
 
@@ -318,7 +322,6 @@ code {
   background-color: #e0e3e6;
   margin-top: 100px;
   padding: 50px 100px;
-  text-align: center;
 }
 
 /* .footer-name {
@@ -327,7 +330,13 @@ code {
 } */
 
 .footer-text {
-  /* color: #ec553e; */
+  color: #ec553e;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.footer-name {
+  margin-bottom: 10px;
   font-size: 32px;
   font-weight: bold;
 }
