@@ -72,7 +72,7 @@ const Banner = () => {
             // class="txt-rotate"
             data-period="2000"
             data-rotate='[ "React developer" ]'
-            // data-rotate='[ "React developer", "freelancer" ]'
+            // data-rotate='[ "React developer", "Freelancer" ]'
           ></span>
         </div>
         <div className="banner-left__button">

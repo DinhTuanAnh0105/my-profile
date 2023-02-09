@@ -20,14 +20,14 @@ const Skills = () => {
     if (widthScreen < 1280) return 500;
   };
   return (
-    <div className="skills">
+    <div className="skills" id="skills">
       <div className="skills-title">SKILLS</div>
       <div className="skills-body">
         <div className="skills-body__left">
           <ReactApexChart
             type="radialBar"
             height={getHeightApexChart()}
-            series={[44, 55, 67, 83, 90]}
+            series={[90, 90, 85, 85, 70]}
             options={{
               chart: {
                 height: 100,

@@ -7,9 +7,9 @@ import Avatar from "../../assets/images/anhdt.jpg"
 
 const Profile = () => {
   return (
-    <div className="profile">
-      <div className="profile-text">PROFILE</div>
-      <div className="profile-text__des">I'm a creative web deverloper</div>
+    <div className="profile" id="profile">
+      <div className="profile-text" >PROFILE</div>
+      <div className="profile-text__des">I'm a creative web developer</div>
       <div className="profile-detail">
         <div className="profile-left">
           <h2>About me</h2>
@@ -36,16 +36,25 @@ const Profile = () => {
             Cau Giay district, Hanoi, Vietnam
           </div>
           <div className="profile-contact">
-            <div className="box-white">
+            <div className="box-white" onClick={() => {
+              window.open("https://www.facebook.com/anh.captain.5")
+            }}>
               <IconFacebook />
             </div>
-            <div className="box-white">
+            
+            <div className="box-white" onClick={() => {
+              window.open("https://www.instagram.com/anh.captain.5/")
+            }}>
               <IconInstagram />
             </div>
-            <div className="box-white">
+            <div className="box-white" onClick={() => {
+              window.open("https://github.com/DinhTuanAnh0105")
+            }}>
               <IconGithub />
             </div>
-            <div className="box-white">
+            <div className="box-white" onClick={() => {
+              window.open("https://codesandbox.io/u/DinhTuanAnh0105")
+            }}>
               <IconCodesandbox />
             </div>
           </div>
