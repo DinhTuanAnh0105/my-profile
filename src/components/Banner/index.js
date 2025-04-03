@@ -1,91 +1,87 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import IconArrowRight from "../icons/ic_arrow_right";
+import IMGDeveloper from "../icons/developer.png";
 
 const Banner = () => {
-  var TxtRotate = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = "";
-    this.tick();
-    this.isDeleting = false;
-  };
+  const textRef = useRef(null);
 
-  TxtRotate.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
+  useEffect(() => {
+    class TxtRotate {
+      constructor(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = "";
+        this.isDeleting = false;
+        this.tick();
+      }
 
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
+      tick() {
+        const i = this.loopNum % this.toRotate.length;
+        const fullTxt = this.toRotate[i];
 
-    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
 
-    var that = this;
-    var delta = 300 - Math.random() * 100;
+        this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
 
-    if (this.isDeleting) {
-      delta /= 2;
-    }
+        let delta = 100; // Điều chỉnh tốc độ gõ chữ mượt hơn
+        if (this.isDeleting) delta /= 2;
 
-    if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 500;
-    }
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
 
-    setTimeout(function () {
-      that.tick();
-    }, delta);
-  };
-
-  window.onload = function () {
-    var elements = document.getElementsByClassName("txt-rotate");
-    for (var i = 0; i < elements.length; i++) {
-      var toRotate = elements[i].getAttribute("data-rotate");
-      var period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        setTimeout(() => this.tick(), delta);
       }
     }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-    document.body.appendChild(css);
-  };
+
+    if (textRef.current) {
+      const toRotate = textRef.current.getAttribute("data-rotate");
+      const period = textRef.current.getAttribute("data-period");
+
+      if (toRotate) {
+        new TxtRotate(textRef.current, JSON.parse(toRotate), period);
+      }
+    }
+  }, []);
+
   return (
     <div className="banner">
       <div className="banner-left">
         <div className="banner-left__name">Dinh Tuan Anh</div>
-        {/* <div className="banner-left__title">I'm front-end web deverloper</div> */}
         <div className="banner-left__title">
           I'm{" "}
           <span
+            ref={textRef}
             className="txt-rotate text-color"
-            // class="txt-rotate"
             data-period="2000"
-            data-rotate='[ "React developer" ]'
-            // data-rotate='[ "React developer", "Freelancer" ]'
+            data-rotate='["Senior Frontend Developer", "React Developer", "Mobile Developer", "Freelancer"]'
           ></span>
         </div>
-        <div className="banner-left__button">
+        <div
+          className="banner-left__button"
+          onClick={() => {
+            window.open(
+              "https://www.topcv.vn/xem-cv/AlVVUAxdAwdVUAAGBgYECQRQAl9aAgIACQlSAw88d4"
+            );
+          }}
+        >
           My CV
           <IconArrowRight />
         </div>
       </div>
       <div className="banner-right">
-        <img
-          className="banner-avatar"
-          src="https://image.thanhnien.vn/w2048/Uploaded/2022/juzagt/2022_09_26/1-522.jpg"
-          alt=""
-        />
+        <img className="banner-avatar" src={IMGDeveloper} alt="Image 1" />
       </div>
     </div>
   );
