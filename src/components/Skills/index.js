@@ -11,6 +11,8 @@ import IconPlane from "../icons/ic_plane";
 import IconReact from "../icons/ic_react";
 import IconSass from "../icons/ic_sass";
 import IconTs from "../icons/ic_ts";
+import IconRedux from "../icons/ic_redux.svg";
+import IconTailwind from "../icons/ic_tailwind.svg";
 
 const Skills = () => {
   const widthScreen = useGetWidth();
@@ -27,7 +29,7 @@ const Skills = () => {
           <ReactApexChart
             type="radialBar"
             height={getHeightApexChart()}
-            series={[90, 90, 85, 85, 70]}
+            series={[90, 90, 95, 95, 90]}
             options={{
               chart: {
                 height: 100,
@@ -76,6 +78,13 @@ const Skills = () => {
             </span>
             <span className="skills-list__items">
               <IconNextJs />
+            </span>
+
+            <span className="skills-list__items">
+              <img src={IconRedux} alt="" width={48} height={48} />
+            </span>
+            <span className="skills-list__items">
+              <img src={IconTailwind} alt="" width={48} height={48} />
             </span>
             <span className="skills-list__items">
               <IconBootstrap />

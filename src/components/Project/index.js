@@ -44,15 +44,17 @@ const Project = () => {
             return (
               <div
                 className="project-body__items"
-                onMouseEnter={() => setImg(el.img)}
+                onMouseEnter={() => {
+                  setImg(el.img);
+                }}
                 // onMouseLeave={() => setImg("")}
                 onClick={() => {
-                  window.open(el.link)
+                  window.open(el.link);
                 }}
               >
                 <div className="project-content">{el.name}</div>
                 <div className="project-des">{el.des}</div>
-                { el.des2 && <div className="project-des">{el.des2}</div>}
+                {el.des2 && <div className="project-des">{el.des2}</div>}
               </div>
             );
           })}

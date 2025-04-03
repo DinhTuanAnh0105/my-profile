@@ -287,11 +287,15 @@ code {
   align-items: flex-start;
   padding: 16px;
   /* margin-right: 100px; */
+  transition: 0.3s ease-out;
+  border-radius: 0.25rem;
+
 }
 
 .project-body__items:hover {
   transform: scale(1.1);
   /* transition-delay: 250ms; */
+  box-shadow: 0px 2px 8px rgb(0 0 0 /50%);
 }
 
 .project-content {
